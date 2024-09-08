@@ -1,0 +1,4 @@
+echo HERE
+cd open_spiel
+sh install.sh || echo Lo and behold this marvel of engineering, it cannot terminate gracefully w/o apt
+pip install .
