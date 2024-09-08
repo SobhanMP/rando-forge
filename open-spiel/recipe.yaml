@@ -18,11 +18,13 @@ requirements:
     - setuptools
     - wheel
     - git
+    - python
+    - bash
   host:
     - pip
-    - python >=3.9
+    - python
   run:
-    - python >=3.9
+    - python
     - pip >=20.0.2
     - attrs >=19.3.0
     - absl-py >=0.10.0
