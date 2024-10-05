@@ -17,8 +17,12 @@ build:
       then: |
         cmake -B build %CMAKE_ARGS% -DCMAKE_EXE_LINKER_FLAGS="-ldl" -GNinja %SRC_DIR%
         ninja install -C build
+      elif: osx
+      then: |
+      cmake -B build $CMAKE_ARGS -DCMAKE_EXE_LINKER_FLAGS="-ldl" -D_LIBCPP_DISABLE_AVAILABILITY -GNinja $SRC_DIR  
+        ninja install -C build
       else: |
-        cmake -B build $CMAKE_ARGS -DCMAKE_EXE_LINKER_FLAGS="-ldl" -GNinja $SRC_DIR  
+      cmake -B build $CMAKE_ARGS -DCMAKE_EXE_LINKER_FLAGS="-ldl" -GNinja $SRC_DIR  
         ninja install -C build
 
 requirements:
