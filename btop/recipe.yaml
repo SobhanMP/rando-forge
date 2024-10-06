@@ -10,6 +10,7 @@ source:
   sha256: 331d18488b1dc7f06cfa12cff909230816a24c57790ba3e8224b117e3f0ae03e
 
 build:
+  skip: ["win"]
   number: 0
   script:
     - mkdir build
