@@ -7,7 +7,7 @@ source:
   target_directory: open_spiel
 
 build:
-  skip: ["win", "osx"]
+  skip: ["win"]
 requirements:
   # note that there is no build section
   build:
