@@ -6,6 +6,8 @@ source:
   git: https://github.com/google-deepmind/open_spiel.git
   target_directory: open_spiel
 
+build:
+  skip: ["win", "osx"]
 requirements:
   # note that there is no build section
   build:
