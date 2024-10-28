@@ -1,9 +1,9 @@
 package:
   name: open-spiel
-  version: "1.5.0.1"
+  version: "1.5.0.2"
 
 source:
-  git: https://github.com/google-deepmind/open_spiel.git
+  git: https://github.com/nathanlct/open_spiel.git
   target_directory: open_spiel
 
 build:
