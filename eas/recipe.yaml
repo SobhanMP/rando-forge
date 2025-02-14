@@ -1,0 +1,43 @@
+context:
+  version: "0.1"
+
+package:
+  name: eas
+  version: ${{ version }}
+
+source:
+  git: https://github.com/gabrfarina/exp-a-spiel.git
+  target_directory: exp-a-spiel
+
+build:
+  script: ${PYTHON} -m pip install --no-deps  -vv ./exp-a-spiel
+requirements:
+  build:
+    - ${{ compiler('c') }}
+    - ${{ compiler('cxx') }}
+    - cmake >=3.29
+    - ninja
+    - make
+  host:
+    # - openmp
+    - python
+    - boost-cpp >=1.85
+    - numpy <2
+    - pip
+    - pybind11
+    - scikit-build-core >=0.3.3
+  run:
+    - numpy <2
+
+tests:
+  - python:
+      imports:
+        - eas
+
+about:
+  homepage: https://github.com/gabrfarina/exp-a-spiel.git
+  license: MIT
+  license_file: exp-a-spiel/LICENSE
+  summary: Exploitability calculation for imperfect-information game benchmarks
+  description: |
+    exp-a-spiel is a library for calculating exploitability for imperfect-information benchmarks.
